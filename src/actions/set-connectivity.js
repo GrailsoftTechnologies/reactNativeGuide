@@ -4,3 +4,8 @@ export default payload => ({
   type: CONNECTIVITY_SET,
   payload,
 });
+
+
+/**************************************************************
+Same basic format, slightly different style.
+**************************************************************/

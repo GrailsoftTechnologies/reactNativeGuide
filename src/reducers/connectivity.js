@@ -12,3 +12,30 @@ export default createReducer(defaultState, {
   },
 
 });
+
+/**************************************************************
+Here we have a typical reducer that makes use of the helpful
+helper function createReducer.
+
+  import { Map } from 'immutable';
+
+  import createReducer from 'lib/helpers/createReducer'
+  import { SOME_ACTION, ANOTHER_ACTION } from 'lib/constants/actions'
+
+
+  const defaultState = Map().set('state1', true);
+  const defaultState = Map().set('sandwich', false);
+  export default createReducer(defaultState, {
+
+    [SOME_ACTION](state, action) {
+      return state.set('state1', action.payload);
+    },
+
+    [ANOTHER_ACTION](state, action) {
+      return state.set('sandwich', action.payload);
+    },
+
+  });
+
+More actions can be added on!
+**************************************************************/

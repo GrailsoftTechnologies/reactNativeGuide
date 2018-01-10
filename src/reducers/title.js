@@ -13,3 +13,8 @@ export default createReducer(defaultState, {
   },
 
 });
+
+/**************************************************************
+Here we have a typical reducer that makes use of the helpful
+helper function createReducer.
+**************************************************************/

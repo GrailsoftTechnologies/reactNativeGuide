@@ -20,3 +20,9 @@ const standard = StyleSheet.create({
 
 
 export default { standard };
+
+/**************************************************************
+We can keep code looking tidier if we separate stylesheets into
+separate files. This can make things handy for tweaking styles
+later on as well.
+**************************************************************/
