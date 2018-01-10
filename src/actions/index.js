@@ -1,6 +1,7 @@
 import setTitle from './set-title';
 import fetchTitle from './fetch-title';
 import setConnectivity from './set-connectivity';
+import setName from './set-name';
 import { genericError } from './errors';
 
 const ActionCreators = {
@@ -8,6 +9,7 @@ const ActionCreators = {
   fetchTitle,
   setConnectivity,
   genericError,
+  setName,
 };
 
 export default ActionCreators;

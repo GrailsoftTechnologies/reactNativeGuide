@@ -2,8 +2,9 @@ import { combineReducers } from 'redux';
 
 import title from 'reducers/title';
 import connectivity from 'reducers/connectivity';
+import name from 'reducers/name';
 
-export const reducers = { title, connectivity };
+export const reducers = { title, connectivity, name };
 
 export default function getRootReducer(navReducer) {
   return combineReducers({

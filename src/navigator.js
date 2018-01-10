@@ -1,14 +1,22 @@
 // First we do our imports
 import React from 'react';
 import { connect } from 'react-redux';
-import { StackNavigator, addNavigationHelpers } from 'react-navigation';
+import { TabNavigator, addNavigationHelpers } from 'react-navigation';
 
 // We also import our own files
 import Splash from 'containers/Splash';
+import Home from 'containers/Home';
+// import ColorSelect from 'containers/ColorSelect';
 import routesNames from 'lib/constants/routes';
 
 // Here we define all of our routes
 const routes = {
+  [routesNames.Home]: {
+    screen: Home,
+    navigationOptions: {
+      headerTitle: 'RealHome',
+    },
+  },
   [routesNames.Splash]: {
     screen: Splash,
     navigationOptions: {
@@ -18,7 +26,7 @@ const routes = {
 };
 
 // We create our AppNavigator object with the routes passed in
-const AppNavigator = StackNavigator(routes);
+const AppNavigator = TabNavigator(routes);
 
 // We create our AppWithoutNavigationState which we will connect
 const AppWithoutNavigationState = props => (

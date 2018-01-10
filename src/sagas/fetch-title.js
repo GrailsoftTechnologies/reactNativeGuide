@@ -1,7 +1,7 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 
 import { TITLE_FETCH } from 'lib/constants/actions';
-import Api from 'lib/Api';
+import Api from 'lib/api';
 import setTitle from 'actions/set-title';
 import { genericError } from 'actions/errors';
 
