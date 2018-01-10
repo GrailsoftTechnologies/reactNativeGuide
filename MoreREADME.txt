@@ -20,6 +20,8 @@ ES6
 * Usage of let and const
 * Usage of (fat) arrow functions
 * Usage of default parameters
+* Usage of the conditional operator ( (true) ? value=true : value=false instead
+  of if(true){value=true}else{value=false})
 * Usage of template literals ( `Hello ${name}!` instead of 'Hello' + name + '!')
 * Usage of the spread operator (...)
 
@@ -107,4 +109,4 @@ Before you 'react-native run-ios' in the react-native-template folder, you may
 need to 'npm start -- --reset-cache'. This is due to a babel module resolver
 plugin that makes importing files a bit easier.
 
-** 
+**

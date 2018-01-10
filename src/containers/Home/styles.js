@@ -6,6 +6,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    width: 'auto',
   },
   title: {
     fontSize: 30,
@@ -25,6 +26,7 @@ const styles = StyleSheet.create({
     color: 'white',
     // padding: 15,
     margin: 10,
+    alignSelf: 'auto',
     borderRadius: 2,
     borderColor: 'white',
     borderWidth: 0.3,

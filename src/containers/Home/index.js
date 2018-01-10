@@ -29,6 +29,7 @@ export class Home extends Component {
           placeholderTextColor="white"
           placeholder="Name"
           onChangeText={(text) => { name = text; }}
+          onEndEditing={() => { console.log('yoooo'); }}
         />
         <Button type={'standard'} onPress={() => { this.props.setName(name); }} text={'Set your name'} />
       </View>
