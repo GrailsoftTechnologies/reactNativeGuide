@@ -27,3 +27,15 @@ function* fetchTitle(action) {
 export default function* watchFetchTitle() {
   yield takeLatest(TITLE_FETCH, fetchTitle);
 }
+
+/**************************************************************
+Here we have an example of a saga. This saga is broken down
+into three parts; you'll find every saga you write will have
+at least two. The first part is the actual API call, which can
+also be imported from a separate file, or written within the
+next part. This second part is the saga action, which
+encapsulates the async request. The third part is the saga
+watcher. This particular watcher is watching for the
+TITLE_FETCH action. Upon 'seeing' it, it will execute the saga
+action, fetchTitle.
+**************************************************************/
