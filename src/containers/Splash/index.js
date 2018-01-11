@@ -15,6 +15,12 @@ import { staticStyles, dynamicStyles } from './styles';
 
 //To start we declare our basic container as a class that extends Component
 export class Splash extends Component {
+
+  // Use async/await for async request
+  async getTitle() {
+    await this.props.fetchTitle();
+  }
+
   //Then we define our render method
   render() {
     //Which simply returns some code to the DOM
@@ -26,7 +32,7 @@ export class Splash extends Component {
             text={'Fetch Remote Title'}
             type={'standard'}
             onPress={() => {
-              this.props.fetchTitle();//Notice that fetch title comes from props
+              this.getTitle();// Notice that fetch title comes from props
             }}
           />
         </View>
@@ -77,7 +83,7 @@ Splash must extend React.Component (another way to write it if
 you don't import { Component } from React) and use connect.
 Connect will ensure that Splash has fetchTitle in its props, as
 well as any other action listed in ActionCreators. It will also
-be sure to keep an eye on the value that getTitle returns from 
+be sure to keep an eye on the value that getTitle returns from
 the store and make it available to access in props. Any change
 in that value will cause Splash to re-render, which is exactly
 what we want!

@@ -27,6 +27,7 @@ ES6
 
 ES7
 * Usage of async/await instead of promises
+* Usage of fetch/request/response instead of XMLHTTPRequest
 
 
 ** React/React Native
@@ -109,4 +110,36 @@ Before you 'react-native run-ios' in the react-native-template folder, you may
 need to 'npm start -- --reset-cache'. This is due to a babel module resolver
 plugin that makes importing files a bit easier.
 
-**
+** React Native Maps
+
+You might find that it will be useful to include a map in you app. You might
+decide that using GoogleMaps through the react-native-maps library is the way
+to go. So you follow the instructions... and it doesn't work. Here's a step by
+step guide to get things set up in your app. Make sure you've got everything
+saved before you start messing around! Pull up the installation guide, you'll
+be copying some code from there
+
+1. Run 'npm install react-native-maps --save'. You'll feel silly if you don't
+  do this first. While your at it, did you do your regular npm install?
+
+2. Navigate to your app's folder and go to the ios folder. Create a new file in
+  it called Podfile (no file extension included)
+
+3. The Podfile they include has some issues. The line that says "pod 'yoga' ..."
+  should have a capital Y. BatchedBridge can be removed a few lines below. See
+  the Podfile for the template to see code that works. Don't forget to replace
+  the project name with yours!
+
+4. Navigate to yourproject/ios/yourprojectname/AppDelegate.m, and add the two
+  lines mentioned in the instructions. See the little + signs next to those
+  lines? GET RID OF THEM. See that - sign on that line in between those two
+  lines? NO TOUCH, LEAVE THAT THERE.
+
+5. You should now be able to import MapView from react-native-maps and use it
+  in one of your containers. Two things to bear in mind: 1. Without styling,
+  your map will load but not show. Be sure to set flex, width, and height for
+  the style. 2. You'll also want to import { PROVIDER_GOOGLE } from
+  react-native-maps, and include provider={PROVIDER_GOOGLE} as a prop for the
+  MapView.
+
+And now everything should work!

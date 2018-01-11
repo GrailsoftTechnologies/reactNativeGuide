@@ -5,18 +5,26 @@ import Api from 'lib/api';
 import setTitle from 'actions/set-title';
 import { genericError } from 'actions/errors';
 
-const executeFetchTitle = () => {
-  const root = 'https://jsonplaceholder.typicode.com';
-  const params = '/posts/1';
-  return Api.get(root + params).then((val) => {
-    console.log(val);
-    return val.title.slice(0, 8);
-  });
-};
+// const executeFetchTitle = () => {
+//   const root = 'https://jsonplaceholder.typicode.com';
+//   const params = '/posts/1';
+//   return Api.get(root + params).then((val) => {
+//     console.log(val);
+//     return val.title.slice(0, 8);
+//   });
+// };
+const rootVal = 'https://jsonplaceholder.typicode.com';
+const paramVal = '/posts/1';
 
-function* fetchTitle(action) {
+const request = new Request(`${rootVal}${paramVal}`, {
+  method: 'GET',
+});
+
+function* fetchTitle() {
   try {
-    const title = yield call(executeFetchTitle);
+    const response = yield fetch(request);
+    const responseJSON = yield response.json();
+    const title = yield responseJSON.title.slice(0, 8);
     yield put(setTitle(title));
   } catch (error) {
     console.warn(error);

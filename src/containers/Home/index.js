@@ -3,6 +3,7 @@ import { View, Text, TextInput } from 'react-native';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 
 import ActionCreators from 'actions/index';
 import getName from 'selectors/name';
@@ -20,6 +21,7 @@ export class Home extends Component {
     const greeting = (this.props.name !== '') ? `Hello, ${this.props.name}!` : 'Please enter your name';
     return (
       <View style={styles.container}>
+        <MapView style={{ flex: 1, height: '100%', width: '100%' }} provider={PROVIDER_GOOGLE} />
         <Text style={styles.title}>Welcome to React Native!</Text>
         <Text style={styles.greeting}>
           {greeting}
