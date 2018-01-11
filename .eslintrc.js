@@ -1,4 +1,5 @@
 module.exports = {
+  "parser": "babel-eslint",
   'extends': 'airbnb',
   'plugins': [
       'react',
@@ -15,6 +16,6 @@ module.exports = {
   'globals': { "fetch": false },
   "env": {
     "jest": true,
-    "es6": true
+    "es6": true,
   },
 }

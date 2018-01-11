@@ -3,8 +3,10 @@ import { combineReducers } from 'redux';
 import title from 'reducers/title';
 import connectivity from 'reducers/connectivity';
 import name from 'reducers/name';
+import viewCoords from 'reducers/viewCoords';
+import markers from 'reducers/markers';
 
-export const reducers = { title, connectivity, name };
+export const reducers = { title, connectivity, name, viewCoords, markers };
 
 export default function getRootReducer(navReducer) {
   return combineReducers({

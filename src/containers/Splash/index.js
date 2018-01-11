@@ -1,29 +1,29 @@
-//Here we have an example of a basic container
-//First we do our imports
+// Here we have an example of a basic container
+// First we do our imports
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import { bindActionCreators } from 'redux';//Self explanatory function
 import { connect } from 'react-redux';//Will connect our container with the store
 import PropTypes from 'prop-types';
 
-//We're also importing some of our own files
+// We're also importing some of our own files
 import ActionCreators from 'actions/index';
 import getTitle from 'selectors/title';
 import positionerStyle from 'lib/styles/positioner';
 import Button from 'components/Button/index';
 import { staticStyles, dynamicStyles } from './styles';
 
-//To start we declare our basic container as a class that extends Component
+// To start we declare our basic container as a class that extends Component
 export class Splash extends Component {
 
   // Use async/await for async request
   async getTitle() {
-    await this.props.fetchTitle();
+    await this.props.fetchTitle(); // Notice that fetch title comes from props
   }
 
-  //Then we define our render method
+  // Then we define our render method
   render() {
-    //Which simply returns some code to the DOM
+    // Which simply returns some code to the DOM
     return (
       <View style={staticStyles.container}>
         <Text style={dynamicStyles.getTitle('white')}>{this.props.title}</Text>
@@ -32,7 +32,7 @@ export class Splash extends Component {
             text={'Fetch Remote Title'}
             type={'standard'}
             onPress={() => {
-              this.getTitle();// Notice that fetch title comes from props
+              this.getTitle();
             }}
           />
         </View>
@@ -40,28 +40,28 @@ export class Splash extends Component {
     );
   }
 }
-//Declaring default props
+// Declaring default props
 Splash.defaultProps = {
   fetchTitle: () => {},
   title: '',
 };
-//And setting prop types
+// And setting prop types
 Splash.propTypes = {
   fetchTitle: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
 };
 
-//Here we are using bindActionCreators to return a dispatcher for all of our
-//actions.
+// Here we are using bindActionCreators to return a dispatcher for all of our
+// actions.
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(ActionCreators, dispatch);
 }
-//Here we take the store and return the title from getTitle
+// Here we take the store and return the title from getTitle
 function mapStateToProps(store) {
-  return { title: getTitle(store) };//Imported from selectors, watches the store
+  return { title: getTitle(store) };// Imported from selectors, watches the store
 }
 
-//Finally we export the return value of connect
+// Finally we export the return value of connect
 export default connect(mapStateToProps, mapDispatchToProps)(Splash);
 
 /**************************************************************
