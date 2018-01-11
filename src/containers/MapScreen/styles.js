@@ -1,24 +1,22 @@
 import { StyleSheet } from 'react-native';
 
-import colors from 'lib/colors';
-
-const staticStyles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.black,
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+  },
+  mapView: {
+    flex: 1,
+    height: '100%',
+    width: '100%',
+    position: 'absolute',
+    top: 0,
+    right: 0,
+  },
+  marker: {},
+  button: {
+    flex: 1,
+    position: 'absolute',
   },
 });
 
-
-const dynamicStyles = {
-  getTitle: color => (
-    {
-      color: colors[color],
-      fontSize: 25,
-    }
-  ),
-};
-
-export { staticStyles, dynamicStyles };
+export default styles;

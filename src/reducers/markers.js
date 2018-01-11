@@ -21,6 +21,8 @@ export default createReducer(defaultState, {
 });
 
 /**************************************************************
-Here we have a typical reducer that makes use of the helpful
-helper function createReducer.
+Here we have another reducer that makes use of the helpful
+helper function createReducer. This particular reducer handles
+two different actions; one sets the state of 'markers', and the
+other adds a marker to the pre-existing array.
 **************************************************************/

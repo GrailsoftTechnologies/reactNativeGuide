@@ -9,32 +9,30 @@ import ActionCreators from 'actions/index';
 import getName from 'selectors/name';
 import getViewCoords from 'selectors/viewCoords';
 import getMarkers from 'selectors/markers';
-import MapMarker from 'components/MapMarker';
 import Button from 'components/Button';
 import styles from './styles';
 
 
 export class MapScreen extends Component {
-  region2 = {
-    latitude: 45.527,
-    longitude: -122.683,
-    latitudeDelta: 0.01,
-    longitudeDelta: 0.01,
-  };
-
-  markers = [];
-
   setFocus(focus) {
     this.props.setViewCoords(focus);
     this.markers = (<Marker coordinate={this.props.markers[0].coordinate} />);
   }
+
+  eyeCue = {
+    latitude: 45.527,
+    longitude: -122.683,
+    latitudeDelta: 0.005,
+    longitudeDelta: 0.005,
+  };
+  markers = [];
   render() {
     return (
-      <View style={{ flex: 1 }}>
-        <MapView region={this.props.viewCoords} style={{ flex: 1, height: '100%', width: '100%', position: 'absolute', top: 0, right: 0 }} provider={PROVIDER_GOOGLE} >
+      <View style={styles.container}>
+        <MapView region={this.props.viewCoords} style={styles.mapView} provider={PROVIDER_GOOGLE} >
           {this.markers}
         </MapView>
-        <Button style={{ flex: 1, position: 'absolute', bottom: 0 }} type={'standard'} onPress={() => { this.setFocus(this.region2); }} text={'Find EyeCue'} />
+        <Button style={styles.button} type={'standard'} onPress={() => { this.setFocus(this.eyeCue); }} text={'Find EyeCue'} />
       </View>
     );
   }
@@ -49,14 +47,12 @@ MapScreen.defaultProps = {
     longitudeDelta: 0.05,
   },
   setViewCoords: () => {},
-  setMarkers: () => {},
 };
 
 MapScreen.propTypes = {
   markers: PropTypes.array,
   viewCoords: PropTypes.object,
   setViewCoords: PropTypes.func,
-  setMarkers: PropTypes.func,
 };
 
 

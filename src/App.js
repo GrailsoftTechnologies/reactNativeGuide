@@ -2,9 +2,7 @@
 // First we do our imports
 import React, { Component } from 'react';
 import { NetInfo } from 'react-native';
-import { Provider, connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import PropTypes from 'prop-types';
+import { Provider } from 'react-redux';
 
 // We also import our own files
 import getStore from 'store';
@@ -16,10 +14,6 @@ const { navReducer, AppWithNavigationState } = navigator;
 
 // We define the App as a class that extends React.Component
 export default class App extends Component {
-  // Not needed but good coding practice
-  constructor(props) {
-    super(props);
-  }
   // This bit is for some helpful, extra debugger info, you can disregard it for now
   componentDidMount() {
     NetInfo.isConnected.addEventListener('change', (isConnected) => {

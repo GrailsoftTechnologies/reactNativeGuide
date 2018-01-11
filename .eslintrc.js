@@ -11,6 +11,7 @@ module.exports = {
     'import/extensions': 0,
     'import/no-extraneous-dependencies': 0,
     'react/forbid-prop-types': 1,
+    'spaced-comment': 0,
     'no-console': ["error", { allow: ["warn", "error", "log"] }],
   },
   'globals': { "fetch": false },

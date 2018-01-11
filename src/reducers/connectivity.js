@@ -1,7 +1,7 @@
 import { Map } from 'immutable';
 
-import createReducer from 'lib/helpers/createReducer'
-import { CONNECTIVITY_SET } from 'lib/constants/actions'
+import createReducer from 'lib/helpers/createReducer';
+import { CONNECTIVITY_SET } from 'lib/constants/actions';
 
 
 const defaultState = Map().set('connectivity', true);

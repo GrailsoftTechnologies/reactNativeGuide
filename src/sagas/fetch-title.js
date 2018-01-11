@@ -1,18 +1,9 @@
-import { call, put, takeLatest } from 'redux-saga/effects';
+import { put, takeLatest } from 'redux-saga/effects';
 
 import { TITLE_FETCH } from 'lib/constants/actions';
-import Api from 'lib/api';
 import setTitle from 'actions/set-title';
 import { genericError } from 'actions/errors';
 
-// const executeFetchTitle = () => {
-//   const root = 'https://jsonplaceholder.typicode.com';
-//   const params = '/posts/1';
-//   return Api.get(root + params).then((val) => {
-//     console.log(val);
-//     return val.title.slice(0, 8);
-//   });
-// };
 const rootVal = 'https://jsonplaceholder.typicode.com';
 const paramVal = '/posts/1';
 
@@ -24,7 +15,8 @@ function* fetchTitle() {
   try {
     const response = yield fetch(request);
     const responseJSON = yield response.json();
-    const title = yield responseJSON.title.slice(0, 8);
+    const title = yield responseJSON.title.slice(0, 8); //Sliced since
+    // its a very long string otherwise
     yield put(setTitle(title));
   } catch (error) {
     console.warn(error);
