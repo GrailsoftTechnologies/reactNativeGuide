@@ -16,24 +16,25 @@ import styles from './styles';
 
 export class MapScreen extends Component {
   region2 = {
-    latitude: 45.5231,
-    longitude: -122.6708,
+    latitude: 45.527,
+    longitude: -122.683,
     latitudeDelta: 0.01,
     longitudeDelta: 0.01,
   };
 
+  markers = [];
+
   setFocus(focus) {
     this.props.setViewCoords(focus);
-    console.log(focus);
-    console.log(this.props);
+    this.markers = (<Marker coordinate={this.props.markers[0].coordinate} />);
   }
   render() {
     return (
       <View style={{ flex: 1 }}>
         <MapView region={this.props.viewCoords} style={{ flex: 1, height: '100%', width: '100%', position: 'absolute', top: 0, right: 0 }} provider={PROVIDER_GOOGLE} >
-          <Marker coordinate={this.props.markers[0].coordinate} />
+          {this.markers}
         </MapView>
-        <Button style={{ flex: 1, position: 'absolute', bottom: '100pt' }} type={'standard'} onPress={() => { this.setFocus(this.region2); }} text={'Place Marker'} />
+        <Button style={{ flex: 1, position: 'absolute', bottom: 0 }} type={'standard'} onPress={() => { this.setFocus(this.region2); }} text={'Find EyeCue'} />
       </View>
     );
   }

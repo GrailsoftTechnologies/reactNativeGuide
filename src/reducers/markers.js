@@ -4,7 +4,7 @@ import createReducer from 'lib/helpers/createReducer';
 import { SET_MARKERS, ADD_MARKER } from 'lib/constants/actions';
 
 
-const defaultState = Map().set('markers', [{ coordinate: { latitude: 45.524, longitude: -122.672 } }]);
+const defaultState = Map().set('markers', [{ coordinate: { latitude: 45.527, longitude: -122.683 } }]);
 
 export default createReducer(defaultState, {
 
