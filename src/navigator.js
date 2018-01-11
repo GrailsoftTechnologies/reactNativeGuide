@@ -2,6 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { TabNavigator, addNavigationHelpers } from 'react-navigation';
+import { Image } from 'react-native';
 
 // We also import our own files
 import Splash from 'containers/Splash';
@@ -15,16 +16,27 @@ const routes = {
   [routesNames.Home]: {
     screen: Home,
     navigationOptions: {
+      tabBarIcon: () => (<Image
+        source={require('./images/home.png')}
+      />),
     },
   },
   [routesNames.Splash]: {
     screen: Splash,
     navigationOptions: {
+      tabBarIcon: () => (<Image
+        source={require('./images/sync.png')}
+      />),
     },
   },
   [routesNames.MapScreen]: {
     screen: MapScreen,
     navigationOptions: {
+      tabBarLabel: 'Map',
+      tabBarIcon: () => (<Image
+        source={require('./images/map.png')}
+        style={{ height: 32, width: 32 }}
+      />),
     },
   },
 };
