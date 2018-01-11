@@ -9,9 +9,7 @@ import styles from './styles';
 //Then declare our component as a fat arrow function that takes props and
 //returns some DOM stuff
 const Button = (props) => {
-  //Add our style from props
   const style = styles[props.type];
-  //Return for the DOM
   return (
     <TouchableOpacity
       onPress={props.onPress}

@@ -6,6 +6,7 @@ import { TabNavigator, addNavigationHelpers } from 'react-navigation';
 // We also import our own files
 import Splash from 'containers/Splash';
 import Home from 'containers/Home';
+import MapScreen from 'containers/MapScreen';
 // import ColorSelect from 'containers/ColorSelect';
 import routesNames from 'lib/constants/routes';
 
@@ -14,13 +15,16 @@ const routes = {
   [routesNames.Home]: {
     screen: Home,
     navigationOptions: {
-      headerTitle: 'RealHome',
     },
   },
   [routesNames.Splash]: {
     screen: Splash,
     navigationOptions: {
-      header: null,
+    },
+  },
+  [routesNames.MapScreen]: {
+    screen: MapScreen,
+    navigationOptions: {
     },
   },
 };
