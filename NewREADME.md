@@ -110,9 +110,12 @@ familiar with React Native and the template, variations in code will appear to
 be less intimidating. Don't be afraid to mess around with things in order to
 figure them out!
 
-#### Before you 'react-native run-ios' in the react-native-template folder, you may
+#### ATTENTION
+Before you 'react-native run-ios' in the react-native-template folder, you may
 need to 'npm start -- --reset-cache'. This is due to a babel module resolver
-plugin that makes importing files a bit easier.
+plugin that makes importing files a bit easier. Close the terminal window that
+was running with the simulator, run the npm command in the window that is still
+open, then refresh your simulator.
 
 ## React Native Maps
 
