@@ -1,6 +1,6 @@
-# EyeCue Guide to React Native
+# Grailsoft Guide to React Native
 
-Hello there EyeCue Intern, welcome to your guide to React Native!
+Congratulations Grailsoft Intern, you are about to learn React Native!
 
 Chances are you are somewhat (or completely) unfamiliar with what React and
 React Native are all about. Good news! There are tons of resources online,
@@ -11,7 +11,7 @@ all the things you'll be learning during your internship.
 The idea behind this guide is to get you as comfortable with writing apps in
 React Native as possible while doing it as quickly as possible. Given your short
 timeframe, the sooner you can start coding, the better! Hopefully this guide,
-along with Eyecue's react-native template, will help you get started quickly. If
+along with Grailsoft's react-native template, will help you get started quickly. If
 you happen to come across any resources you find helpful that aren't listed
 here, feel free to add them!
 
@@ -65,7 +65,7 @@ it's probably best to read up on some of the documentation. The basic idea is to
 store the entire state of the app in a single object (the store). Components may
 change the state by dispatching actions. These actions will change the state
 through reducers. The way the react-native-template uses reducers is a bit
-different from typical redux reducers for two reasons; 1. It uses a helper
+different from typical Redux reducers for two reasons; 1. It uses a helper
 function (defined in the src/lib/helpers folder), and 2. It sets state through
 immutable. Immutable is a state management tool that helps you avoid the
 pitfalls of mutating data with JavaScript. After changing the state with the
@@ -82,9 +82,9 @@ re-render.
 ## Sagas
 
 You probably came across some sort of asynchronous request mechanisms in the
-examples online (thunk appears in the Lynda examples). Sagas are another way
-of dealing with async requests, and they work with redux quite nicely. Each saga
-has watcher that watches for specific actions to be dispatched through redux.
+examples online (Thunk appears in the Lynda examples). Sagas are another way
+of dealing with async requests, and they work with Redux quite nicely. Each saga
+has watcher that watches for specific actions to be dispatched through Redux.
 When the watcher 'sees' the action, it will execute the saga action. Better yet,
 sagas are able to dispatch actions from within themselves, making chaining
 simple and straight-forward.
